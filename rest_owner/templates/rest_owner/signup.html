@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign Up</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background-image: url('/static/rest_owner/img/bg.jpg'); /* Update the path */
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #f0f0f0;
+        }
+
+        .container {
+            background: rgba(0, 0, 0, 0.85);
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+            width: 400px;
+            max-width: 95%;
+            padding: 20px;
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        .title {
+            color: #fff;
+            font-size: 26px;
+            padding: 15px 0;
+        }
+
+        .content {
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .input-box {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
+        .input-box .details {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #f0f0f0;
+        }
+
+        .input-box input {
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            border: 1px solid #333;
+            background-color: #262626;
+            color: #f0f0f0;
+            border-radius: 6px;
+            transition: border-color 0.3s;
+        }
+
+        .input-box input:focus {
+            border-color: #fff;
+        }
+
+        .button input[type="submit"] {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 14px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background-color 0.3s;
+        }
+
+        .button input[type="submit"]:hover {
+            background-color: #555;
+        }
+
+        .footer {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #f0f0f0;
+        }
+
+        .footer a {
+            color: #1e90ff;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="title">Sign Up</div>
+        <div class="content">
+            <form method="post">
+                {% csrf_token %}
+                <div class="input-box">
+                    <span class="details">Username</span>
+                    {{ form.username }}
+                </div>
+                <div class="input-box">
+                    <span class="details">Email</span>
+                    {{ form.email }}
+                </div>
+                <div class="input-box">
+                    <span class="details">Phone Number</span>
+                    {{ form.phone }}
+                </div>
+                <div class="input-box">
+                    <span class="details">Password</span>
+                    {{ form.password1 }}
+                </div>
+                <div class="input-box">
+                    <span class="details">Confirm Password</span>
+                    {{ form.password2 }}
+                </div>
+                <div class="button">
+                    <input type="submit" value="Sign Up">
+                </div>
+            </form>
+            <div class="footer">
+                Already have an account? <a href="/">Login here</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

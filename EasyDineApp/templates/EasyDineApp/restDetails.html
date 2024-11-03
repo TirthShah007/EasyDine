@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 20px auto;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    h1 {
+      font-size: 28px;
+      color: #333;
+      margin-top: 0;
+      text-align: center;
+    }
+
+    .details {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+    }
+
+    .details h4 {
+      margin: 15px 0 5px 0;
+      color: #007bff;
+    }
+
+    .details p {
+      color: #666;
+    }
+
+    .image {
+      text-align: center;
+      position: relative;
+      margin-bottom: 20px;
+    }
+
+    .image img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      transition: transform 0.3s ease;
+    }
+
+    .image img:hover {
+      transform: scale(1.05);
+    }
+
+    .review-panel {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+    }
+
+    .review-panel h2 {
+      margin-top: 0;
+      font-size: 24px;
+      color: #333;
+    }
+
+    .review-panel input[type="text"],
+    .review-panel textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      resize: none;
+    }
+
+    .review-panel button {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 20px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .review-panel button:hover {
+      background-color: #0056b3;
+    }
+
+    .reviews-section {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+    }
+
+    .reviews-section h2 {
+      margin-top: 0;
+      font-size: 24px;
+      color: #333;
+    }
+
+    .review-card {
+      background-color: #fff;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      margin-bottom: 10px;
+    }
+
+    .review-text {
+      color: #666;
+    }
+
+    .review-author {
+      color: #007bff;
+      font-weight: bold;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+    }
+
+    .buttons .btn {
+      background-color: #007bff;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .buttons .btn:hover {
+      background-color: #0056b3;
+    }
+
+    .address, .contact, .desc {
+      margin-bottom: 15px;
+      line-height: 1;
+    }
+    
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="details">
+      <h1>{{ restaurant.name }}</h1>
+      <div class="address">
+        <h4>Address:</h4>
+        <p>{{ restaurant.address }}</p>
+        <p>{{ restaurant.post }}</p>
+        <p>{{ restaurant.city }}</p>
+      </div>
+      <div class="contact">
+        <h4>Contact:</h4>
+        <p>{{ restaurant.phone }}</p>
+      </div>
+      <div class="desc">
+        <h4>Description:</h4>
+        <p>{{ restaurant.about }}</p>
+      </div>
+    </div>
+
+    <div class="image">
+      <img src="/media/{{ restaurant.image}}" alt="{{ restaurant.name }}">
+    </div>
+
+    <div class="review-panel">
+      <h2>Add Review</h2>
+      <input type="text" placeholder="Your Name">
+      <textarea placeholder="Your Review"></textarea>
+      <button>Submit Review</button>
+    </div>
+
+    <div class="reviews-section">
+      <h2>Customer Reviews</h2>
+      <div class="review-card">
+        <p class="review-text">"Great food and excellent service! Will definitely visit again."</p>
+        <p class="review-author">- John Doe</p>
+      </div>
+    </div>
+
+    <div class="buttons">
+      <a href="/restList.html"><button class="btn">Back</button></a>
+      <a href="/booking.html"><button class="btn">Book Table</button></a>
+    </div>
+  </div>
+</body>
+
+</html>

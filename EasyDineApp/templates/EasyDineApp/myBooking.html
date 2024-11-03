@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Bookings</title>
+</head>
+<body>
+    <h1>My Bookings</h1>
+    <ul>
+        {% if bookings %}
+            {% for booking in bookings %}
+            <table>
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Date and Time</th>
+                    <th>Number of People</th>
+                    <th>Phone</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for booking in bookings %}
+                  <tr>
+                    <td>{{ booking.name }}</td>
+                    <td>{{ booking.email }}</td>
+                    <td>{{ booking.datetime }}</td>
+                    <td>{{ booking.people }}</td>
+                    <td>{{ booking.phone }}</td>
+                  </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+            {% endfor %}
+        {% else %}
+            <p>You have no bookings.</p>
+        {% endif %}
+    </ul>
+</body>
+</html>
